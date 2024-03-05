@@ -25,8 +25,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ModeToggle className={"absolute top-6 right-6"}/>
-          {children}
+          <div className="min-h-screen">{children}</div>
+          <ModeToggle className={'absolute top-6 right-6'} />
         </ThemeProvider>
       </body>
     </html>
