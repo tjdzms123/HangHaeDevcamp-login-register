@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ModeToggle } from '@/components/mode-toggle';
+import { Toaster } from '@/components/ui/toaster';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
         >
           <div className="min-h-screen">{children}</div>
           <ModeToggle className={'absolute top-6 right-6'} />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
