@@ -1,36 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+배운 것 정리
 
-## Getting Started
+1. getFieldState : 특정 양식 필드의 현재 상태를 가져오는 데 사용됨
+   이 함수를 사용하면 해당 필드에 대한 값, 에러, 유효성 등의 정보에 접근할 수 있음
+   이를 통해 동적으로 상태를 추적하고 UI를 업데이트할 수 있음
 
-First, run the development server:
+2. variant : 버튼의 시각적인 스타일을 지정하는 속성
+   일반적인 스타일의 버튼, 윤곽 스타일의 버튼, 다른 테마에 맞게 구성된 버튼 등이 될 수 있음
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+3. cn : tailwind를 merge할 때 발생할 수 있는 클래스 충돌 문제를 해결해주는 역할을 함
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. isDirty : 이 속성은 사용자가 해당 필드에 입력을 시작했을 때 true가 되며, 즉시 양식 필드의 값이 변경되면 활성화됨
+   초기값과 현재 값이 다르다면 isDirty는 true가 됨
+   이는 주로 사용자가 양식을 편집하거나 정보를 입력했는지 여부를 추적하는 데 사용됨
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+5. invalid : 이 속성은 해당 양식 필드의 현재 값이 유효한지 여부를 나타냄
+   유효성 검사를 통과하면 true가 되고, 그렇지 않으면 false가 됨
+   이를 통해 사용자에게 실시간으로 유효성 상태를 제공하거나, 제출 전에 유효성을 확인할 수 있음
