@@ -35,6 +35,7 @@ import { useToast } from '@/components/ui/use-toast';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 type RegisterInput = z.infer<typeof registerSchema>;
 
@@ -56,8 +57,6 @@ export default function Home() {
   });
 
   const onSubmit = (data: RegisterInput) => {
-    console.log(data);
-
     const { password, confirmPassword } = data;
     if (password !== confirmPassword) {
       toast({
@@ -71,7 +70,6 @@ export default function Home() {
   };
 
   const nextStepBtn = () => {
-    // 특정 필드나 전체 폼에 대한 유효성 검사 메소드
     form.trigger(['phone', 'email', 'username', 'role']);
 
     const phoneState = form.getFieldState('phone');
@@ -201,7 +199,7 @@ export default function Home() {
                       <FormMessage />
                     </FormItem>
                   )}
-                />{' '}
+                />
                 <FormField
                   control={form.control}
                   name="confirmPassword"
@@ -219,7 +217,7 @@ export default function Home() {
                   )}
                 />
               </motion.div>
-              <div className={'flex gap-2'}>
+              <div className="flex gap-2">
                 <Button
                   className={cn({ hidden: step === 0 })}
                   type="submit"
@@ -241,6 +239,18 @@ export default function Home() {
                   onClick={() => setStep(0)}
                 >
                   이전 단계로
+                </Button>
+                <Button
+                  type="button"
+                  variant={'ghost'}
+                  className={cn({ hidden: step === 0 })}
+                >
+                  <Link
+                    href={'/login'}
+                    className="text-xs"
+                  >
+                    Go To Login
+                  </Link>
                 </Button>
               </div>
             </form>
