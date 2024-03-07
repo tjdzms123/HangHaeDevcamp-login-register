@@ -18,3 +18,19 @@
    이를 통해 사용자에게 실시간으로 유효성 상태를 제공하거나, 제출 전에 유효성을 확인할 수 있음
 
 6. trigger : 특정 필드나 전체 폼에 대한 유효성 검사 메소드
+
+7. useRouter VS Link :
+   useRouter
+   * react-router-dom의 history.push()와 유사
+   * 크롤러가 링크를 감지하지 못해 SEO가 좋지 않을 수 있음
+   * 외부 URL을 사용할 경우 window.location 혹은 a 태그를 사용해야함
+   * useRouter는 로직을 처리한 후 원하는 시점에 전환이 가능
+
+   Link
+   * Link는 Client-side navigation으로, javascript로 페이지 전환이 이뤄짐
+   * 기본 navigation보다 빠르며 SPA(Single Page Application)의 특성을 유지
+   * 클릭 시 바로 페이지가 전환
+
+   결론
+   router.push()는 onClick에 사용되는 행동(action)이기 때문에 Link 태그보다 검색에 불리하지만, 로직의 처리에 따라 활용도가 높음
+   Nextjs의 장점인 SEO를 원한다면 Link를 사용하는 것이 더 유리
